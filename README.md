@@ -88,25 +88,25 @@ terraform apply -target=aws_iam_role_policy_attachment.lambda_dynamo
 ```
 
 
+--- 
 
-## 📋 Test Matrix
+### 📸 Screenshots for Verification
 
-### API Integration Tests
-| Case ID | Description | Steps | Expected Result |
-|---------|-------------|-------|-----------------|
-| TC-01 | Valid API Response | 1. Call Lambda manually<br>2. Check CloudWatch logs | Returns 200 status with processed records |
-| TC-02 | Invalid API Key | 1. Set wrong secret value<br>2. Trigger Lambda | Fails with "Secret retrieval error" |
-| TC-03 | Malformed API Data | 1. Mock broken JSON response<br>2. Trigger Lambda | Handles parse error gracefully |
+# ✅ Lambda execution success
+![lambda](Images/cloudwatch.png)
 
-### Infrastructure Tests
-| Case ID | Description | Steps | Expected Result |
-|---------|-------------|-------|-----------------|
-| TC-04 | S3 Raw Storage | 1. Run pipeline<br>2. Check S3 bucket | New JSON file appears in `raw/` prefix |
-| TC-05 | DynamoDB Writes | 1. Execute Lambda<br>2. Scan table | Records with valid schema exist |
-| TC-06 | EventBridge Trigger | 1. Wait for scheduled time<br>2. Check Lambda invocations | Automatic execution occurs |
+# ✅ DynamoDB Table
+![dynamodb](Images/dynamodb.png)
 
-### Failure Tests
-| Case ID | Description | Steps | Expected Result |
-|---------|-------------|-------|-----------------|
-| TC-07 | Missing Secrets | 1. Delete secret<br>2. Trigger Lambda | Fails with descriptive error |
-| TC-08 | S3 Permission Denied | 1. Revoke s3:PutObject<br>2. Run pipeline | Fails with access denied error |
+# ✅ EventBridge
+![eventbridge](Images/eventbridge.png)
+
+# ✅ Cloudwatch Alarms
+![cloudwatch](Images/image.png)
+
+# ✅ Secrets Manager
+![cloudwatch](Images/secretmanager.png)
+
+---
+# Conclusion
+Everything’s wired up and running as expected! Feel free to explore the code, logs, and included visuals for a full understanding of how the system works.
