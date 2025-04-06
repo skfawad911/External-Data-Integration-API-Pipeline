@@ -1,0 +1,61 @@
+# Terraform files
+.terraform
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfplan
+terraform.tfstate.backup
+.terraform.lock.hcl
+.terraform.lock.hcl.*
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.python-version
+pip-selfcheck.json
+
+# Lambda packaging
+lambda_function.zip
+venv/
+*.zip
+
+# AWS credentials
+*.aws_credentials
+.env
+.env.local
+
+# IDE specific
+.vscode/
+.idea/
+*.sw[op]
+*.sublime-*
+
+# OS generated
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs and temp files
+*.log
+*.tmp
+*.bak
+
+# Documentation auto-generated
+docs/_build/
+docs/_static/
+docs/_templates/
+
+# Test artifacts (keep verified screenshots)
+tests/output/
+!tests/verified_*.png
+
+# Exception: Keep these important files
+!.terraform.lock.hcl.example
+!example.tfvars
