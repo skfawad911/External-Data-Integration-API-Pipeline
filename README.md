@@ -25,7 +25,7 @@ This project demonstrates a fully automated, serverless data integration pipelin
 
 ## ⚙️ Technologies Used
 
-- **Python 3.10**
+- **Python 3.9**
 - **AWS Lambda**
 - **AWS EventBridge**
 - **AWS DynamoDB**
