@@ -69,7 +69,7 @@ This project demonstrates a fully automated, serverless data integration pipelin
 ### 1. Clone this repo and `cd` into it
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/skfawad911/External-Data-Integration-API-Pipeline.git
 cd terraform
 ```
 # Make sure you define API in terraform.tfvars
