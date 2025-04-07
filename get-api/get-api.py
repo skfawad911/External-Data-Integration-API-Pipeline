@@ -4,7 +4,12 @@ import boto3
 import requests
 from datetime import datetime
 from decimal import Decimal
+import logging
 from botocore.exceptions import ClientError
+
+
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
 
 def get_secret():
     """Fetch API key securely from AWS Secrets Manager"""
@@ -101,9 +106,11 @@ def lambda_handler(event, context):
             for item in processed_data:
                 batch.put_item(Item=item)
 
+        message = f"Success: Stored {len(processed_data)} records"
+        
         return {
             "statusCode": 200,
-            "body": f"Success: Stored {len(processed_data)} records"
+            "body": message
         }
 
     except Exception as e:
